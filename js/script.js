@@ -40,10 +40,10 @@ function obtenerColor(){
     const tipo = formato.value;
 
     if(tipo === "hsl"){
-        return randomHex();
+        return randomHSL();
     }
 
-    return randomHex();
+    return randomRGBA();
 }
 
 function showToast(texto){
@@ -99,7 +99,7 @@ function crearPaleta(){
 
         const codigo = document.createElement("span");
         codigo.classList.add("color-code");
-        codigo.innerText = color;
+        codigo.innerText = randomHex();
 
         codigo.addEventListener("click", () => {
 
@@ -159,4 +159,4 @@ function guardarLocal(){
 
 btnGenerar.addEventListener("click", crearPaleta);
 
-window.addEventListener("load", crearPaleta);
+window.addEventListener("load", crearPaleta)
