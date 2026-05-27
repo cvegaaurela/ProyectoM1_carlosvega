@@ -159,7 +159,7 @@ function guardarLocal() {
 
 btnGenerar.addEventListener("click", crearPaleta);
 
-window.addEventListener("load", crearPaleta)
+
 
 const btnlimpiar = document.getElementById("btnLimpiar");
 function limpiarpaleta() {
