@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #020b14;
+    margin-top: 40px;
+}
+
 .configuracion {
     display: flex;
     gap: 20px;
@@ -21,6 +28,7 @@
     --text: #f8fafc;
     --accent: #38bdf8;
 }
+
 header {
     padding: 20px;
     text-align: center;
@@ -41,7 +49,7 @@ header {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #24505e, #c6ebd6);
+    background: linear-gradient(135deg, #252525, #c6ebd6);
     color: var(--text);
     min-height: 100vh;
     padding: 40px 20px;
@@ -91,9 +99,16 @@ button:hover {
     opacity: .9;
 }
 
+#btnLimpiar {
+
+    background: rgba(221, 13, 13, 0.932);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
 #paleta {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 180px));
+    grid-template-columns: repeat(5, minmax(150px, 180px));
     justify-content: center;
     gap: 18px;
     width: 90%;

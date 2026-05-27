@@ -2,42 +2,49 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    
-<header>
+
+  <header>
     <h1>Generador de Paleta de colores 🎨</h1>
     <img src="img/logo.png" alt="logo" class="logo">
-</header>
+  </header>
 
-<section class="configuracion">
-  <label for="cantidad">Cantidad de colores:</label>
-  <select id="cantidad">
-    <option value="6">6</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-  </select>
-  <label for="formato">Formato:</label>
-<select id="formato">
-    
-   <option value="rgba">RGBA</option>
-  <option value="hsl">HSL</option>
-</select>
-  <button id="btnGenerar">Generar</button>
+  <section class="configuracion">
+    <label for="cantidad">Cantidad de colores:</label>
+    <select id="cantidad">
+      <option value="6">6</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    </label>
+    <label for="formato">Formato:</label>
+    <select id="formato">
+      <option value="rgba">RGBA</option>
+      <option value="hsl">HSL</option>
+    </select>
+    </label>
+    <section>
+      <button id="btnGenerar">Generar</button>
+      <button id="btnLimpiar">Limpiar</button>
+    </section>
 
-</section>
+  </section>
 
 
   <div id="paleta">
 
   </div>
-<script src="js/script.js"></script> 
-  
+  <script src="js/script.js"></script>
+
 </body>
+
+<footer>
+  <p>Creado por Carlos Vega</p> 
 
 </html>

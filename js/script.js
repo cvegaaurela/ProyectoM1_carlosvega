@@ -10,14 +10,14 @@ function randomHex() {
     const letras = "0123456789ABCDEF";
     let color = "#";
 
-    for(let i = 0; i < 6; i++){
+    for (let i = 0; i < 6; i++) {
         color += letras[Math.floor(Math.random() * 16)];
     }
 
     return color;
 }
 
-function randomRGBA(){
+function randomRGBA() {
 
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -26,7 +26,7 @@ function randomRGBA(){
     return `rgba(${r}, ${g}, ${b}, 1)`;
 }
 
-function randomHSL(){
+function randomHSL() {
 
     const h = Math.floor(Math.random() * 360);
     const s = Math.floor(Math.random() * 100);
@@ -35,18 +35,18 @@ function randomHSL(){
     return `hsl(${h}, ${s}%, ${l}%)`;
 }
 
-function obtenerColor(){
+function obtenerColor() {
 
     const tipo = formato.value;
 
-    if(tipo === "hsl"){
+    if (tipo === "hsl") {
         return randomHSL();
     }
 
     return randomRGBA();
 }
 
-function showToast(texto){
+function showToast(texto) {
 
     const toast = document.createElement("div");
     toast.classList.add("toast");
@@ -56,33 +56,33 @@ function showToast(texto){
 
     setTimeout(() => {
         toast.classList.add("show");
-    },100);
+    }, 100);
 
     setTimeout(() => {
         toast.classList.remove("show");
 
         setTimeout(() => {
             toast.remove();
-        },400);
+        }, 400);
 
-    },2000);
+    }, 2000);
 }
 
-function crearPaleta(){
+function crearPaleta() {
 
     const total = cantidad.value;
 
     paleta.innerHTML = "";
 
-    for(let i = 0; i < total; i++){
+    for (let i = 0; i < total; i++) {
 
         let color;
 
-        if(coloresGuardados[i]?.locked){
+        if (coloresGuardados[i]?.locked) {
 
             color = coloresGuardados[i].color;
 
-        }else{
+        } else {
 
             color = obtenerColor();
         }
@@ -113,7 +113,7 @@ function crearPaleta(){
 
         let locked = coloresGuardados[i]?.locked || false;
 
-        if(locked){
+        if (locked) {
             card.classList.add("locked");
         }
 
@@ -152,7 +152,7 @@ function crearPaleta(){
     guardarLocal();
 }
 
-function guardarLocal(){
+function guardarLocal() {
 
     localStorage.setItem("paleta", JSON.stringify(coloresGuardados));
 }
@@ -160,3 +160,11 @@ function guardarLocal(){
 btnGenerar.addEventListener("click", crearPaleta);
 
 window.addEventListener("load", crearPaleta)
+
+const btnlimpiar = document.getElementById("btnLimpiar");
+function limpiarpaleta() {
+    paleta.innerHTML = "";
+    coloresGuardados = [];
+    localStorage.removeItem("paleta");
+}
+btnlimpiar.addEventListener("click", limpiarpaleta);
